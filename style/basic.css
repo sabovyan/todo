@@ -7,7 +7,7 @@
 	--done-text: 'Gloria Hallelujah', cursive;
 	--to-do-text: 'Source Code Pro', monospace;
 
-	--secondary-color: rgb(228, 52, 125);
+	--secondary-color: rgb(243, 84, 150);
 }
 * {
 	margin: 0;
@@ -15,7 +15,8 @@
 	box-sizing: border-box;
 }
 
-body,
-html {
-	height: 100%;
+.flex--centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

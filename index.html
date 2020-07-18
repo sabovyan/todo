@@ -19,25 +19,38 @@
          <button id="plus"><i class="fas fa-plus"></i></button>
       </div>
 
-      <div id="container">
-         <ul id="toDoList">
-            <li class="toDoItem item"> <span>Call Mr Freeman</span> <i class="fas fa-times"></i></li>
-            <li class="toDoItem item"> <span>find your keys</span> <i class="fas fa-times"></i></li>
-            <li class="toDoItem item"> <span>find your friends</span> <i class="fas fa-times"></i></li>
-            <li class="toDoItem item"> <span>match the script</span> <i class="fas fa-times"></i></li>
+      <div id="to-do__container" class="to-do__container">
+         <ul id="to-do__List" class="to-do__List">
+            <li class="to-do__item item">
+               <span>Call Mr Freeman</span>
+               <i class="to-do__close fas fa-times"></i>
+            </li>
+            <li class="to-do__item item">
+               <span>find your keys</span>
+               <i class="to-do__close fas fa-times"></i>
+            </li>
+            <li class="to-do__item done">
+               <span>find your friends</span>
+               <i class="to-do__close fas fa-times"></i>
+            </li>
+            <li class="to-do__item item">
+               <span>match the script</span>
+               <i class="to-do__close fas fa-times"></i>
+            </li>
          </ul>
 
       </div>
-      <div id="fillIn">
+      <div id="form-container" class="form-container">
 
-         <form id="addNewListItem" action="#">
-            <i class=" close fas fa-times"></i>
-            <div id="setGoal">
-               <p id="notify">please fill in the line</p>
-               <label for="note">type your new goal</label>
-               <input type="text" name="note" id="note">
+         <form id="toDoForm" class="form-container__form" action="#">
+            <i class="form-container__close fas fa-times"></i>
+            <div id="goal" class="form-container__goal">
+               <p id="notify" class="form-container__notify">please fill in the line</p>
+               <label class="form-container__goal-label" for="note">type your next goal</label>
+               <input type="text" name="note" id="note" class="form-container__note" autocomplete="off" maxlength="28">
             </div>
-            <button id="add"><i class="fas fa-rocket"></i></button>
+            <button id="add" class="form-container__submit"><i
+                  class="form-container__rocket fas fa-rocket"></i></button>
          </form>
       </div>
       <div id="rocket">

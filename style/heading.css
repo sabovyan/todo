@@ -39,7 +39,7 @@
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-position: 0px 0px;
-	animation: bg-roll 15s infinite linear;
+	animation: bg-roll 15s forwards linear;
 }
 
 @keyframes bg-roll {
