@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'handwriting';
+	src: url('../fonts/IndieFlower-Regular.ttf');
+}
+:root {
+	--head-text: 'handwriting', cursive;
+	--done-text: 'Gloria Hallelujah', cursive;
+	--to-do-text: 'Source Code Pro', monospace;
+
+	--secondary-color: rgb(228, 52, 125);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+}
