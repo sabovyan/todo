@@ -3,47 +3,41 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 60%;
+	width: 70%;
 	margin: 1rem;
-	padding: 0 0 0.7rem;
-	border-bottom: 2px solid var(--secondary-color);
-}
-#plus {
-	background-color: var(--secondary-color);
-	border: none;
-	outline: none;
-	color: white;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	font-size: 20px;
-	line-height: 4px;
-	box-shadow: 5px 0 5px rgb(180, 180, 180);
-}
-#plus:hover {
-	font-size: 23px;
-	box-shadow: 6px 6px 6px rgb(180, 180, 180);
-	background-color: rgb(255, 89, 150);
-}
-#plus:active {
-	font-size: 20px;
-	box-shadow: none;
-	animation: spin 0.3s forwards;
+	padding: 0.7rem 0;
+	border-bottom: 10px solid transparent;
+	border-image: url(/image/Untitled-3.png) 20 round;
 }
 .main__header {
-	font-family: var(--head-text);
-	letter-spacing: 15px;
-	text-transform: capitalize;
-	background: linear-gradient(to right, rgb(99, 233, 243) 30%, #f363bc 75%);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
+	font-family: cursive;
+	letter-spacing: 10px;
+	font-size: 40px;
+	text-transform: uppercase;
+	text-shadow: -2px 1px 0 rgba(0, 0, 0, 0.801), 2px -1px 0 rgba(0, 0, 0, 0.801);
+	color: white;
 	background-position: 0px 0px;
-	animation: bg-roll 15s forwards linear;
 }
 
-@keyframes bg-roll {
-	50% {
-		background-position: 580px 500px;
-	}
+#plus {
+	background-color: white;
+	border: none;
+	outline: none;
+	width: 40px;
+	height: 50px;
+	font-size: 40px;
+	text-align: end;
+	line-height: 55px;
+	color: black;
+	text-shadow: -2px 1px 0 rgba(0, 0, 0, 0.801);
+	cursor: pointer;
+	transition: text-shadow 0.1s;
+}
+#plus:hover {
+	color: white;
+	text-shadow: -2px 1px 0 rgba(0, 0, 0, 0.801), 2px -1px black;
+}
+#plus:active {
+	font-size: 35px;
+	box-shadow: none;
 }

@@ -3,16 +3,14 @@
 	src: url('../fonts/IndieFlower-Regular.ttf');
 }
 :root {
-	--head-text: 'handwriting', cursive;
-	--done-text: 'Gloria Hallelujah', cursive;
-	--to-do-text: 'Source Code Pro', monospace;
-
-	--secondary-color: rgb(243, 84, 150);
+	--cursive-text: 'handwriting', cursive;
+	-secondary-color: rgb(206, 79, 79);
 }
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: var(--cursive-text);
 }
 
 .flex--centered {

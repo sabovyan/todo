@@ -5,7 +5,7 @@
 	flex-direction: column;
 }
 #to-do__container {
-	min-width: 50%;
+	min-width: 60%;
 }
 #to-do__List {
 	width: 100%;
@@ -19,92 +19,53 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 1rem;
-	border-radius: 8px;
 	font-size: 20px;
-	padding: 20px;
-	color: rgb(255, 255, 255);
+	padding: 1rem 0;
+	color: black;
 	cursor: pointer;
-	box-shadow: 5px 5px 0 grey, 8px 8px 0 rgb(126, 125, 125);
+	font-family: var(--cursive-text);
 }
 .to-do__List .item {
-	background: linear-gradient(
-		to right,
-		rgb(83, 176, 204) 10%,
-		rgb(99, 199, 199) 50%
-	);
-	font-family: 'Source Code Pro', monospace;
-}
-
-.to-do__List .item:hover {
-	animation: item-hover 0.5s forwards linear;
 	letter-spacing: 2px;
+	border-bottom: 10px solid transparent;
+	border-image: url(/image/Untitled-3.png) 20 round;
 }
 
 .to-do__close {
-	visibility: visible;
-	transition: color 0.2s;
+	font-size: 15px;
 }
+
 .to-do__item:hover > .to-do__close {
-	color: var(--secondary-color);
-	visibility: visible;
-}
-.to-do__List .to-do__close:active {
-	animation: spin 0.1s infinite;
-}
-.to-do__List .to-do__item:active .to-do__close {
-	animation: spin 0.1s infinite;
-}
-.to-do__List .to-do__item:active .to-do__item {
-	animation: close 1s forwards;
+	color: white;
+	text-shadow: 2px 0 0 rgba(0, 0, 0, 0.801), -2px 0px 0 rgba(0, 0, 0, 0.801);
 }
 .done {
-	background-color: #51d87e;
-	background: linear-gradient(
-		to right,
-		rgb(99, 199, 157) 10%,
-		rgb(99, 210, 177) 95%
-	);
-	background-size: cover;
 	font-family: 'Gloria Hallelujah', cursive;
+	text-decoration: line-through;
 }
 .done:hover {
-	/* background: linear-gradient(
-		to right,
-		rgb(99, 199, 157) 10%,
-		rgb(83, 176, 204) 95%
-	); */
-	animation: item-hover 1s forwards linear;
 	letter-spacing: 2px;
 }
-/* ANCHOR  adjust it for small screen */
-@keyframes item-hover {
-	100% {
-		background-position: 698px 0;
-	}
-}
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(90deg);
-	}
+
+.to-do__List .item--closed {
+	animation: close 0.4s forwards;
+	text-decoration: line-through;
 }
 @keyframes close {
 	0% {
-		text-decoration: none;
-		background-color: #59e287;
+		text-decoration: line-through;
 	}
 	50% {
-		text-decoration: line-through;
 		transform: rotateX(0deg);
-		background-color: #e2e059;
+	}
+	90% {
+		transform: rotateX(90deg);
 	}
 	100% {
 		transform: rotateX(90deg);
-		background-color: #e27459;
 	}
 }
+
 /* ANCHOR change display flex with class of flex--centered */
 .form-container {
 	width: 100%;
@@ -124,11 +85,11 @@
 	flex-direction: column;
 	width: 50%;
 	max-width: 500px;
-	animation: rotate 1s forwards, scale 1s forwards 1.1s;
 	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 5px;
 	padding: 1rem;
 	box-shadow: 5px 5px 5px rgb(61, 61, 61);
+	animation: rotate 1s forwards, scale 1s forwards 1.1s;
 }
 
 @keyframes rotate {
@@ -153,33 +114,25 @@
 	text-transform: capitalize;
 }
 .form-container__close {
-	color: var(--secondary-color);
 	align-self: flex-end;
 	padding: 5px;
 }
-.form-container__close:hover {
-	animation: spin 0.5s infinite;
-}
-.form-container__close:active {
-	animation: spin 0.01s infinite;
-}
 
 .form-container__goal-label {
-	color: var(--secondary-color);
 	width: 100%;
 	padding: 0.5rem 0 1rem;
 	cursor: pointer;
+	font-style: italic;
 }
 .form-container__note {
-	padding: 10px;
-	border: 2px solid var(--secondary-color);
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 5px;
-	color: var(--secondary-color);
-	font-size: 1rem;
-	font-family: var(--to-do-text);
-	letter-spacing: 2px;
+	padding: 5px 10px;
 	outline: none;
+	border: none;
+	border-bottom: 2px solid black;
+	border-radius: 5px 5px 0 0;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	background-color: rgba(245, 245, 245, 0.288);
 }
 
 .form-container__submit {
@@ -190,33 +143,29 @@
 	border-radius: 50%;
 	align-self: flex-end;
 	line-height: 50px;
-	font-size: 23px;
+	font-size: 20px;
 	background-color: rgba(255, 255, 255, 0.384);
 	border: none;
 	color: none;
 	outline: none;
-	color: #e24378d8;
 	transition: transform 0.3s;
 }
-.form-container__submit:hover {
-	background-color: #e24378d8;
-}
+
 .form-container__rocket {
 	transition: transform 0.5s ease-out;
 }
-.form-container__submit:hover .form-container__rocket {
+.form-container__submit:hover {
 	transform: rotate(-45deg);
-	color: white;
 }
 
 #notify {
 	visibility: hidden;
 	font-size: 12px;
-	color: #f06a96;
+	color: black;
 	background: linear-gradient(
 		to right,
 		rgb(204, 245, 245) 0.1%,
-		rgba(255, 255, 255, 0.1) 50%
+		rgba(255, 255, 255, 0.1) 2%
 	);
 }
 
@@ -226,7 +175,7 @@
 	right: 20px;
 	font-size: 30px;
 	transform: rotate(-45deg);
-	color: #e2598d;
+	color: rgba(245, 245, 245, 0.164);
 }
 .move {
 	animation: moveup 1s;
