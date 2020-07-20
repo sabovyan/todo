@@ -135,6 +135,16 @@
 	background-color: rgba(245, 245, 245, 0.288);
 }
 
+.form-container__last-row {
+	display: flex;
+	justify-content: space-between;
+}
+#notify {
+	visibility: hidden;
+	font-size: 12px;
+	align-self: center;
+	padding-left: 20px;
+}
 .form-container__submit {
 	padding: 5px 0 0;
 	margin-top: 10px;
@@ -158,17 +168,6 @@
 	transform: rotate(-45deg);
 }
 
-#notify {
-	visibility: hidden;
-	font-size: 12px;
-	color: black;
-	background: linear-gradient(
-		to right,
-		rgb(204, 245, 245) 0.1%,
-		rgba(255, 255, 255, 0.1) 2%
-	);
-}
-
 #rocket {
 	position: absolute;
 	bottom: 20px;
@@ -181,7 +180,7 @@
 	animation: moveup 1s;
 }
 @keyframes moveup {
-	0 {
+	0% {
 		bottom: 0;
 	}
 	50% {

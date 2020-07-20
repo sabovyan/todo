@@ -21,22 +21,7 @@
 
       <div id="to-do__container" class="to-do__container">
          <ul id="to-do__List" class="to-do__List">
-            <li class="to-do__item item">
-               <span>Call Mr Freeman</span>
-               <i class="to-do__close fas fa-times"></i>
-            </li>
-            <li class="to-do__item item ">
-               <span>find your keys</span>
-               <i class="to-do__close fas fa-times"></i>
-            </li>
-            <li class="to-do__item done">
-               <span>find your friends</span>
-               <i class="to-do__close fas fa-times"></i>
-            </li>
-            <li class="to-do__item item">
-               <span>match the script</span>
-               <i class="to-do__close fas fa-times"></i>
-            </li>
+
          </ul>
 
       </div>
@@ -45,12 +30,15 @@
          <form id="toDoForm" class="form-container__form" action="#">
             <i class="form-container__close fas fa-times"></i>
             <div id="goal" class="form-container__goal">
-               <p id="notify" class="form-container__notify">please fill in the line</p>
                <label class="form-container__goal-label" for="note">type your next goal</label>
                <input type="text" name="note" id="note" class="form-container__note" autocomplete="off" maxlength="28">
             </div>
-            <button id="add" class="form-container__submit"><i
-                  class="form-container__rocket fas fa-rocket"></i></button>
+            <div class="form-container__last-row">
+               <p id="notify" class="form-container__notify">please fill in the line</p>
+               <button id="add" class="form-container__submit"><i
+                     class="form-container__rocket fas fa-rocket"></i></button>
+            </div>
+
          </form>
          <div id="rocket">
             <i class="fas fa-rocket"></i>
