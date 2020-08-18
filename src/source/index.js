@@ -6,9 +6,11 @@ const addBtn = document.getElementById('add');
 const toDoList = document.getElementById('to-do__List');
 const notify = document.getElementById('notify');
 const rocket = document.getElementById('rocket');
+
 // basic functionality
 const form = {
-	eachGoal: [],
+	inputValue: '',
+	goals: [],
 	display() {
 		formContainer.style.display = 'flex';
 		notify.style.visibility = 'hidden';
@@ -19,39 +21,48 @@ const form = {
 		formContainer.style.display = 'none';
 	},
 	add(value) {
-		this.eachGoal.push(value);
-		// to pass the value of the input to a span
-		const newSpan = document.createElement('span');
-		newSpan.innerHTML = value;
+		try {
+			this.goals.forEach((goal) => {
+				if (value.toLowerCase().trim() === goal.toLowerCase()) {
+					throw new Error("You'd already added this goal in your list");
+				}
+			});
 
-		// to create a closing button for list item
-		const newClose = document.createElement('i');
-		newClose.classList.add('fas');
-		newClose.classList.add('fa-times');
-		newClose.classList.add('to-do__close');
+			this.inputValue = value.trim();
+			this.goals.push(this.inputValue);
 
-		const newItem = document.createElement('li');
-		newItem.classList.add('to-do__item');
-		newItem.classList.add('item');
-		newItem.setAttribute('tabindex', '0');
-		newItem.append(newSpan);
-		newItem.append(newClose);
-		toDoList.append(newItem);
-		if (newItem) {
-			rocket.classList.add('move');
-			setTimeout(() => {
-				rocket.classList.remove('move');
-			}, 500);
+			// to pass the value of the input to a span
+			const newSpan = document.createElement('span');
+			newSpan.innerHTML = value;
+
+			// to create a closing button for list item
+			const newClose = document.createElement('i');
+			newClose.classList.add('fas');
+			newClose.classList.add('fa-times');
+			newClose.classList.add('to-do__close');
+
+			const newItem = document.createElement('li');
+			newItem.classList.add('to-do__item');
+			newItem.classList.add('item');
+			newItem.setAttribute('tabindex', '0');
+			newItem.append(newSpan);
+			newItem.append(newClose);
+			toDoList.append(newItem);
+			if (newItem) {
+				rocket.classList.add('move');
+				setTimeout(() => {
+					rocket.classList.remove('move');
+				}, 500);
+			}
+		} catch (err) {
+			notify.style.visibility = 'visible';
+			notify.innerText = err.message;
 		}
 	},
 	remove(item) {
-		form.lastItem = item.firstElementChild.innerText;
+		this.lastItem = item.firstElementChild.innerText.toLowerCase();
+		this.goals = this.goals.filter((goal) => goal !== form.lastItem);
 
-		this.eachGoal = this.eachGoal.filter((elem) => {
-			if (elem !== item.firstElementChild.innerText) {
-				return elem;
-			}
-		});
 		item.classList.add('item--closed');
 		setTimeout(() => {
 			item.remove();
@@ -77,7 +88,6 @@ formContainer.addEventListener('click', (event) => {
 
 // keyboard events
 window.addEventListener('keyup', (event) => {
-	/* console.log(event); */
 	if (event.key === 'Escape') {
 		form.hide();
 	}
@@ -92,7 +102,8 @@ window.addEventListener('keyup', (event) => {
 // to create a new list item
 addBtn.addEventListener('click', (event) => {
 	event.preventDefault();
-	if (inputNote.value.trim() == '') {
+	if (inputNote.value.trim() === '') {
+		notify.textContent = 'please fill in the line';
 		notify.style.visibility = 'visible';
 		return false;
 	}
