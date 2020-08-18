@@ -1,0 +1,192 @@
+@import './basic.css';
+@import './heading.css';
+
+.main__container {
+	flex-direction: column;
+}
+#to-do__container {
+	min-width: 60%;
+}
+#to-do__List {
+	width: 100%;
+	list-style: none;
+}
+.to-do__item {
+	width: 100%;
+	height: 50px;
+	text-transform: capitalize;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1rem;
+	font-size: 20px;
+	padding: 1rem 0;
+	color: black;
+	cursor: pointer;
+	font-family: cursive;
+}
+.to-do__List .item {
+	letter-spacing: 2px;
+	border-bottom: 10px solid transparent;
+	border-image: url(../image/Untitled-3.png) 20 round;
+}
+
+.to-do__close {
+	font-size: 15px;
+}
+
+.to-do__item:hover > .to-do__close {
+	color: white;
+	text-shadow: 2px 0 0 rgba(0, 0, 0, 0.801), -2px 0px 0 rgba(0, 0, 0, 0.801);
+}
+.done {
+	font-family: 'Gloria Hallelujah', cursive;
+	text-decoration: line-through;
+}
+.done:hover {
+	letter-spacing: 2px;
+}
+
+.to-do__List .item--closed {
+	animation: close 0.4s forwards;
+	text-decoration: line-through;
+}
+@keyframes close {
+	0% {
+		text-decoration: line-through;
+	}
+	50% {
+		transform: rotateX(0deg);
+	}
+	90% {
+		transform: rotateX(90deg);
+	}
+	100% {
+		transform: rotateX(90deg);
+	}
+}
+
+/* ANCHOR change display flex with class of flex--centered */
+.form-container {
+	width: 100%;
+	height: 100%;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.575);
+	font-size: 20px;
+	font-family: var(--to-do-text);
+	letter-spacing: 2px;
+}
+.form-container__form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	max-width: 500px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+	padding: 1rem;
+	box-shadow: 5px 5px 5px rgb(61, 61, 61);
+	animation: rotate 1s forwards, scale 1s forwards 1.1s;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotateX(90deg);
+	}
+	to {
+		transform: rotateX(360deg);
+	}
+}
+@keyframes scale {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.4);
+	}
+}
+.form-container__goal {
+	display: flex;
+	flex-direction: column;
+	text-transform: capitalize;
+}
+.form-container__close {
+	align-self: flex-end;
+	padding: 5px;
+}
+
+.form-container__goal-label {
+	width: 100%;
+	padding: 0.5rem 0 1rem;
+	cursor: pointer;
+	font-style: italic;
+}
+.form-container__note {
+	padding: 5px 10px;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid black;
+	border-radius: 5px 5px 0 0;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	background-color: rgba(245, 245, 245, 0.288);
+}
+
+.form-container__last-row {
+	display: flex;
+	justify-content: space-between;
+}
+#notify {
+	visibility: hidden;
+	font-size: 12px;
+	align-self: center;
+	padding-left: 20px;
+}
+.form-container__submit {
+	padding: 5px 0 0;
+	margin-top: 10px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	align-self: flex-end;
+	line-height: 50px;
+	font-size: 20px;
+	background-color: rgba(255, 255, 255, 0.384);
+	border: none;
+	color: none;
+	outline: none;
+	transition: transform 0.3s;
+}
+
+.form-container__rocket {
+	transition: transform 0.5s ease-out;
+}
+.form-container__submit:hover {
+	transform: rotate(-45deg);
+}
+
+#rocket {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 30px;
+	transform: rotate(-45deg);
+	color: rgba(245, 245, 245, 0.164);
+}
+.move {
+	animation: moveup 1s;
+}
+@keyframes moveup {
+	0% {
+		bottom: 0;
+	}
+	50% {
+		bottom: 100%;
+	}
+	100% {
+		opacity: 0;
+	}
+}

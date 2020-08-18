@@ -7,7 +7,7 @@
 	margin: 1rem;
 	padding: 0.7rem 0;
 	border-bottom: 10px solid transparent;
-	border-image: url(/image/Untitled-3.png) 20 round;
+	border-image: url(../image/Untitled-3.png) 20 round;
 }
 .main__header {
 	font-family: cursive;

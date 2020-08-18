@@ -1,0 +1,9 @@
+# parcel
+dist/
+.cache/
+
+# dependences
+/node_modules
+
+# vscode
+.vscode

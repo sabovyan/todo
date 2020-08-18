@@ -1,16 +1,11 @@
-@font-face {
-	font-family: 'handwriting';
-	src: url('../fonts/IndieFlower-Regular.ttf');
-}
 :root {
-	--cursive-text: 'handwriting', cursive;
 	-secondary-color: rgb(206, 79, 79);
 }
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: var(--cursive-text);
+	font-family: cursive;
 }
 
 .flex--centered {
