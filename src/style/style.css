@@ -3,6 +3,7 @@
 
 .main__container {
 	flex-direction: column;
+	overflow: hidden;
 }
 #to-do__container {
 	min-width: 60%;
@@ -177,11 +178,11 @@
 	color: rgba(245, 245, 245, 0.164);
 }
 .move {
-	animation: moveup 1s;
+	animation: moveUp 1s;
 }
-@keyframes moveup {
+@keyframes moveUp {
 	0% {
-		bottom: 0;
+		bottom: 20px;
 	}
 	50% {
 		bottom: 100%;

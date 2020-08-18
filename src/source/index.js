@@ -5,7 +5,7 @@ const formContainer = document.getElementById('form-container');
 const addBtn = document.getElementById('add');
 const toDoList = document.getElementById('to-do__List');
 const notify = document.getElementById('notify');
-
+const rocket = document.getElementById('rocket');
 // basic functionality
 const form = {
 	eachGoal: [],
@@ -21,7 +21,7 @@ const form = {
 	add(value) {
 		this.eachGoal.push(value);
 		// to pass the value of the input to a span
-		let newSpan = document.createElement('span');
+		const newSpan = document.createElement('span');
 		newSpan.innerHTML = value;
 
 		// to create a closing button for list item
@@ -107,12 +107,13 @@ addBtn.addEventListener('click', (event) => {
 
 toDoList.addEventListener('click', (event) => {
 	const li = event.target.closest('.to-do__item');
+	const span = event.target.closest('.to-do__item > span');
 	const close = event.target.closest('.to-do__close');
 	if (event.target === close) {
 		form.remove(li);
 	}
 
-	if (event.target === li) {
+	if (event.target === li || event.target === span) {
 		if (li.classList.contains('item')) {
 			li.classList.remove('item');
 			li.classList.add('done');
