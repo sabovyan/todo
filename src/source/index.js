@@ -108,6 +108,8 @@ addBtn.addEventListener('click', (event) => {
 		return false;
 	}
 	notify.style.visibility = 'hidden';
+	
+	console.log("I was here")
 
 	form.add(inputNote.value);
 	inputNote.value = '';
